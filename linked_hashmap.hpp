@@ -194,7 +194,7 @@ public:
 		clear();
 		delete[] table;
 		table = nullptr;
-		header = nullptr;
+		if (header) { delete header; header = nullptr; }
 		copy_from(other);
 		return *this;
 	}
